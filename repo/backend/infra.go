@@ -20,6 +20,7 @@ func InitInfra(db *sql.DB) *Infra {
 // Backend stores pointers to the domain models.
 type Backend struct {
 	ProductRepo *Product
+	UserRepo    *User
 }
 
 // Init Initializes required connections for our application.
@@ -27,6 +28,7 @@ func Init(db *sql.DB) *Backend {
 	infra := InitInfra(db)
 	return &Backend{
 		ProductRepo: &Product{Infra: infra},
+		UserRepo:    &User{Infra: infra},
 	}
 }
 
