@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	confPath = "conf/conf.toml"
+	confPath = "config.toml"
 	appName  = "Go Layout"
 )
 

@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+
+  postgres:
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=krsc
+    ports:
+    - "5432:5432"
+
+  krsc:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    ports:
+    - 8080:8080
+    links:
+    - postgres:postgres
+    depends_on:
+    - postgres
