@@ -1,0 +1,20 @@
+mode = "dev"
+port = ":8080"
+grace_timeout = 10
+
+[log]
+access = "access.log"
+error = "err.log"
+format = "txt"
+ 
+[postgres]
+host = "0.0.0.0"
+port = "5432"
+user = "kutty"
+pass = "root"
+db = "users"
+
+[redis]
+host= "0.0.0.0"
+port = "6379"
+pass = ""
